@@ -1,0 +1,2 @@
+include ':app', ':tuikit', ':zxyim'
+rootProject.name='zxyTIM'
