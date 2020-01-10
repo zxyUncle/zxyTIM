@@ -5,17 +5,30 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.tencent.imsdk.TIMCallBack;
 import com.tencent.imsdk.TIMConversationType;
+import com.tencent.imsdk.TIMFriendshipManager;
+import com.tencent.imsdk.TIMManager;
+import com.tencent.imsdk.TIMUserProfile;
+import com.tencent.openqq.protocol.imsdk.msg;
 import com.tencent.qcloud.tim.uikit.component.TitleBarLayout;
 import com.tencent.qcloud.tim.uikit.modules.chat.ChatLayout;
 import com.tencent.qcloud.tim.uikit.modules.chat.base.ChatInfo;
 import com.tencent.qcloud.tim.uikit.modules.chat.layout.input.InputLayout;
 import com.tencent.qcloud.tim.uikit.modules.chat.layout.message.MessageLayout;
+import com.tencent.qcloud.tim.uikit.utils.ToastUtil;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 @Route(path = ARoutPath.CHAt)
 public class ZxyChatActivity extends AppCompatActivity {
@@ -28,13 +41,17 @@ public class ZxyChatActivity extends AppCompatActivity {
     @Autowired(name = "name")
     String name = "";
 
+    //头像
+    @Autowired(name = "img")
+    String mIconUrl = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zxy_chat);
         ARouter.getInstance().inject(this);
         chatLayout = findViewById(R.id.chat_layout);
-        setStatusIconCollor(this,true);
+        setStatusIconCollor(this, true);
         initChat();
         initConfig();
     }
@@ -84,31 +101,28 @@ public class ZxyChatActivity extends AppCompatActivity {
         // 设置头像大小
         messageLayout.setAvatarSize(new int[]{48, 48});
 
-        messageLayout.setRightNameVisibility(View.VISIBLE);
-
-
+//        messageLayout.setRightNameVisibility(View.VISIBLE);
+//        messageLayout.setLeftNameVisibility(View.VISIBLE);
         // 聊天界面设置头像和昵称
-//        TIMUserProfile profile = TIMFriendshipManager.getInstance().queryUserProfile(msg.getFromUser());
-//        if (profile == null) {
-//            usernameText.setText(msg.getFromUser());
-//        } else {
-//            usernameText.setText(!TextUtils.isEmpty(profile.getNickName()) ? profile.getNickName() : msg.getFromUser());
-//            if (!TextUtils.isEmpty(profile.getFaceUrl()) && !msg.isSelf()) {
-//                List<String> urllist = new ArrayList<>();
-//                urllist.add(profile.getFaceUrl());
-//                leftUserIcon.setIconUrls(urllist);
-//                urllist.clear();
-//            }
-//        }
-//        TIMUserProfile selfInfo = TIMFriendshipManager.getInstance().queryUserProfile(TIMManager.getInstance().getLoginUser());
-//        if (profile != null && msg.isSelf()) {
-//            if (!TextUtils.isEmpty(selfInfo.getFaceUrl())) {
-//                List<String> urllist = new ArrayList<>();
-//                urllist.add(profile.getFaceUrl());
-//                rightUserIcon.setIconUrls(urllist);
-//                urllist.clear();
-//            }
-//        }
+        TIMUserProfile profile = TIMFriendshipManager.getInstance().queryUserProfile(id);
+
+        HashMap<String, Object> hashMap = new HashMap<>();
+        // 头像，mIconUrl 就是您上传头像后的 URL，可以参考 Demo 中的随机头像作为示例
+        if (!TextUtils.isEmpty(mIconUrl)) {
+            hashMap.put(TIMUserProfile.TIM_PROFILE_TYPE_KEY_FACEURL, mIconUrl);
+        }
+        TIMFriendshipManager.getInstance().modifySelfProfile(hashMap, new TIMCallBack() {
+            @Override
+            public void onError(int i, String s) {
+                Log.e("zxyIM", "modifySelfProfile err code = " + i + ", desc = " + s);
+                ToastUtil.toastShortMessage("Error code = " + i + ", desc = " + s);
+            }
+
+            @Override
+            public void onSuccess() {
+                Log.e("zxyIM", "modifySelfProfile success");
+            }
+        });
 
         // zxy 输入区域
         // 从 ChatLayout 里获取 InputLayout

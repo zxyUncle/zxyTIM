@@ -3,19 +3,14 @@ package com.zxy.zxytim.main;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.tencent.imsdk.TIMManager;
-import com.tencent.imsdk.TIMMessage;
-import com.tencent.imsdk.TIMMessageListener;
 import com.zxy.zxyim.ARoutPath;
 import com.zxy.zxyim.ZxyTimUtls;
 import com.zxy.zxytim.R;
 
-import java.util.List;
 
 @Route(path = ARoutPath.MAIN)
 public class MainActivity extends AppCompatActivity   {
@@ -24,14 +19,15 @@ public class MainActivity extends AppCompatActivity   {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        ZxyTimUtls.getInstance().login("202054", "eJyrVgrxCdZLrSjILEpVsjIzMLEwMNABi5WlFilZKRnpGShB*MUp2YkFBZkpSlaGJgYGRpbGRuamEJnMlNS8ksy0TIgGAyMDUxOYnsx0oJBLib5xcbF3qGlycYlnSkB6VEa6h2WyfoqjSYWHn6FFaJSjkaVjVWCGmXagLVRjSWYu0DmGpuYWpkA3mZjUAgCqaS9j");
-//        ZxyTimUtls.getInstance().login("202164","eJyrVgrxCdZLrSjILEpVsjIzMLEwMNABi5WlFilZKRnpGShB*MUp2YkFBZkpSlaGJgYGRpbGRuamEJnMlNS8ksy0TIgGAyNDMxOYnsx0oFCFk6mni6e7UZWnn0ehT7ZLWqGJr75TkLNHeoiLk1tUpW9RipdXSWR6TpCnLVRjSWYu0DmGpuYWpmaG5mZGtQCoWy-O");
+        ZxyTimUtls.getInstance().login("2233039", "eJyrVgrxCdZLrSjILEpVsjIzMLEwMNABi5WlFilZKRnpGShB*MUp2YkFBZkpSlaGJgYGRpbGRuamEJnMlNS8ksy0TIgGI2NjA2NLmKbMdKBYaKZrYbhLhXlxpUm2eViRQZazRZGnV2VBckRksmNuVVmEeUqyX3KoYXmppy1UY0lmLtA9hqbmFmbGlpZGxrUAEGsxNw__");
         findViewById(R.id.singnchat).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String mIconUrl = "https://goss.veer.com/creative/vcg/veer/800water/veer-134671947.jpg";
                 ARouter.getInstance().build(ARoutPath.CHAt)
-                        .withString("id", "202164")
-                        .withString("name", "133")
+                        .withString("id", "201977")
+                        .withString("img", mIconUrl)
+                        .withString("name", "带亚洲")
                         .navigation();
             }
         });
