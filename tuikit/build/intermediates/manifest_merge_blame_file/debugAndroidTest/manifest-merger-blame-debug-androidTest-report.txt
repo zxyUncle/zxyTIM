@@ -3,24 +3,24 @@
 3    package="com.tencent.qcloud.tim.uikit.test" >
 4
 5    <uses-sdk
-5-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4569910123709952969.xml:5:5-74
+5-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5357226142732857299.xml:5:5-74
 6        android:minSdkVersion="21"
-6-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4569910123709952969.xml:5:15-41
+6-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5357226142732857299.xml:5:15-41
 7        android:targetSdkVersion="27" />
-7-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4569910123709952969.xml:5:42-71
+7-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5357226142732857299.xml:5:42-71
 8
 9    <instrumentation
-9-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4569910123709952969.xml:11:5-15:83
+9-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5357226142732857299.xml:11:5-15:83
 10        android:name="android.support.test.runner.AndroidJUnitRunner"
-10-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4569910123709952969.xml:11:22-83
+10-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5357226142732857299.xml:11:22-83
 11        android:functionalTest="false"
-11-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4569910123709952969.xml:14:22-52
+11-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5357226142732857299.xml:14:22-52
 12        android:handleProfiling="false"
-12-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4569910123709952969.xml:13:22-53
+12-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5357226142732857299.xml:13:22-53
 13        android:label="Tests for com.tencent.qcloud.tim.uikit.test"
-13-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4569910123709952969.xml:15:22-81
+13-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5357226142732857299.xml:15:22-81
 14        android:targetPackage="com.tencent.qcloud.tim.uikit.test" />
-14-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4569910123709952969.xml:12:22-79
+14-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5357226142732857299.xml:12:22-79
 15
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 16-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-79
@@ -45,11 +45,11 @@
 22-->[com.tencent.imsdk:imsdk:4.6.1] D:\studioCache\AndroidStudio\.gradle\caches\transforms-2\files-2.1\e2a8683050a9ffc29ee53ca2ed7af7bf\imsdk-4.6.1\AndroidManifest.xml:12:22-64
 23
 24    <application
-24-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4569910123709952969.xml:7:5-9:19
+24-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5357226142732857299.xml:7:5-9:19
 25        android:allowBackup="true"
 25-->[com.tencent.imsdk:imsdk:4.6.1] D:\studioCache\AndroidStudio\.gradle\caches\transforms-2\files-2.1\e2a8683050a9ffc29ee53ca2ed7af7bf\imsdk-4.6.1\AndroidManifest.xml:17:9-35
 26        android:debuggable="true"
-26-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4569910123709952969.xml:7:18-43
+26-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5357226142732857299.xml:7:18-43
 27        android:label="@string/app_name"
 27-->[com.tencent.imsdk:imsdk:4.6.1] D:\studioCache\AndroidStudio\.gradle\caches\transforms-2\files-2.1\e2a8683050a9ffc29ee53ca2ed7af7bf\imsdk-4.6.1\AndroidManifest.xml:18:9-41
 28        android:supportsRtl="true"
@@ -57,8 +57,8 @@
 29        android:usesCleartextTraffic="true" >
 29-->[com.tencent.imsdk:imsdk:4.6.1] D:\studioCache\AndroidStudio\.gradle\caches\transforms-2\files-2.1\e2a8683050a9ffc29ee53ca2ed7af7bf\imsdk-4.6.1\AndroidManifest.xml:20:9-44
 30        <uses-library android:name="android.test.runner" />
-30-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4569910123709952969.xml:8:9-60
-30-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger4569910123709952969.xml:8:23-57
+30-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5357226142732857299.xml:8:9-60
+30-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger5357226142732857299.xml:8:23-57
 31
 32        <activity
 32-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:9-18:52

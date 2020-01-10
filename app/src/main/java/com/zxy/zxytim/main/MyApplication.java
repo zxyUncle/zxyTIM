@@ -24,7 +24,6 @@ import java.util.List;
 
 public class MyApplication extends Application {
     public static final int SDKAPPID = 1400293275; // 您的 SDKAppID
-    public static String tag = "zxyIM";
 
     @Override
     public void onCreate() {
