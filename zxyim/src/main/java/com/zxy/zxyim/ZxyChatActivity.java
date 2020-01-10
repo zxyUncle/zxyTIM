@@ -97,9 +97,9 @@ public class ZxyChatActivity extends AppCompatActivity {
         // 设置默认头像，默认与朋友与自己的头像相同
         messageLayout.setAvatar(R.drawable.ic_launcher_background);
         // 设置头像圆角，不设置则默认不做圆角处理
-        messageLayout.setAvatarRadius(50);
+//        messageLayout.setAvatarRadius(50);
         // 设置头像大小
-        messageLayout.setAvatarSize(new int[]{48, 48});
+//        messageLayout.setAvatarSize(new int[]{48, 48});
 
 //        messageLayout.setRightNameVisibility(View.VISIBLE);
 //        messageLayout.setLeftNameVisibility(View.VISIBLE);
