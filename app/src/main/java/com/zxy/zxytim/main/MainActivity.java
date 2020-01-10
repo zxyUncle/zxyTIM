@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity   {
                 String mIconUrl = "https://goss.veer.com/creative/vcg/veer/800water/veer-134671947.jpg";
                 ARouter.getInstance().build(ARoutPath.CHAt)
                         .withString("id", "201977")
-                        .withString("img", mIconUrl)
+//                        .withString("img", mIconUrl)
                         .withString("name", "带亚洲")
                         .navigation();
             }

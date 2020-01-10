@@ -41,9 +41,9 @@ public class ZxyChatActivity extends AppCompatActivity {
     @Autowired(name = "name")
     String name = "";
 
-    //头像
-    @Autowired(name = "img")
-    String mIconUrl = "";
+//    //头像
+//    @Autowired(name = "img")
+//    String mIconUrl = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +95,7 @@ public class ZxyChatActivity extends AppCompatActivity {
         //设置聊天背景
 //        messageLayout.setBackground(new ColorDrawable(0xB0AA6D96));
         // 设置默认头像，默认与朋友与自己的头像相同
-        messageLayout.setAvatar(R.drawable.ic_launcher_background);
+        messageLayout.setAvatar(R.drawable.ic_login_logo);
         // 设置头像圆角，不设置则默认不做圆角处理
 //        messageLayout.setAvatarRadius(50);
         // 设置头像大小
@@ -103,26 +103,25 @@ public class ZxyChatActivity extends AppCompatActivity {
 
 //        messageLayout.setRightNameVisibility(View.VISIBLE);
 //        messageLayout.setLeftNameVisibility(View.VISIBLE);
-        // 聊天界面设置头像和昵称
-        TIMUserProfile profile = TIMFriendshipManager.getInstance().queryUserProfile(id);
 
-        HashMap<String, Object> hashMap = new HashMap<>();
-        // 头像，mIconUrl 就是您上传头像后的 URL，可以参考 Demo 中的随机头像作为示例
-        if (!TextUtils.isEmpty(mIconUrl)) {
-            hashMap.put(TIMUserProfile.TIM_PROFILE_TYPE_KEY_FACEURL, mIconUrl);
-        }
-        TIMFriendshipManager.getInstance().modifySelfProfile(hashMap, new TIMCallBack() {
-            @Override
-            public void onError(int i, String s) {
-                Log.e("zxyIM", "modifySelfProfile err code = " + i + ", desc = " + s);
-                ToastUtil.toastShortMessage("Error code = " + i + ", desc = " + s);
-            }
-
-            @Override
-            public void onSuccess() {
-                Log.e("zxyIM", "modifySelfProfile success");
-            }
-        });
+//        //设置头像
+//        HashMap<String, Object> hashMap = new HashMap<>();
+//        // 头像，mIconUrl 就是您上传头像后的 URL，可以参考 Demo 中的随机头像作为示例
+//        if (!TextUtils.isEmpty(mIconUrl)) {
+//            hashMap.put(TIMUserProfile.TIM_PROFILE_TYPE_KEY_FACEURL, mIconUrl);
+//        }
+//        TIMFriendshipManager.getInstance().modifySelfProfile(hashMap, new TIMCallBack() {
+//            @Override
+//            public void onError(int i, String s) {
+//                Log.e("zxyIM", "modifySelfProfile err code = " + i + ", desc = " + s);
+//                ToastUtil.toastShortMessage("Error code = " + i + ", desc = " + s);
+//            }
+//
+//            @Override
+//            public void onSuccess() {
+//                Log.e("zxyIM", "modifySelfProfile success");
+//            }
+//        });
 
         // zxy 输入区域
         // 从 ChatLayout 里获取 InputLayout
