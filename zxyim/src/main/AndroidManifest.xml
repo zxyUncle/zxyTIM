@@ -3,7 +3,8 @@
     package="com.zxy.zxyim">
 
     <application>
-        <activity android:name=".ZxyChatActivity"></activity>
+        <activity android:name=".MessageListActivity"></activity>
+        <activity android:name=".ZxyChatActivity" />
     </application>
 
 </manifest>

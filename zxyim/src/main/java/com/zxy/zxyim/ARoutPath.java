@@ -7,5 +7,6 @@ public class ARoutPath {
 
     public static final String TIMMODULE = "/timModule/";
     public static final String CHAt = TIMMODULE+"chat";
+    public static final String MSGLIST = TIMMODULE+"msglist";
 }
 

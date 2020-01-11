@@ -1,34 +1,18 @@
 package com.zxy.zxyim;
 
 
-import android.app.Activity;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.tencent.imsdk.TIMCallBack;
 import com.tencent.imsdk.TIMConversationType;
-import com.tencent.imsdk.TIMFriendshipManager;
-import com.tencent.imsdk.TIMManager;
-import com.tencent.imsdk.TIMUserProfile;
-import com.tencent.openqq.protocol.imsdk.msg;
 import com.tencent.qcloud.tim.uikit.component.TitleBarLayout;
 import com.tencent.qcloud.tim.uikit.modules.chat.ChatLayout;
 import com.tencent.qcloud.tim.uikit.modules.chat.base.ChatInfo;
 import com.tencent.qcloud.tim.uikit.modules.chat.layout.input.InputLayout;
 import com.tencent.qcloud.tim.uikit.modules.chat.layout.message.MessageLayout;
-import com.tencent.qcloud.tim.uikit.utils.ToastUtil;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 @Route(path = ARoutPath.CHAt)
 public class ZxyChatActivity extends AppCompatActivity {
@@ -51,30 +35,12 @@ public class ZxyChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_zxy_chat);
         ARouter.getInstance().inject(this);
         chatLayout = findViewById(R.id.chat_layout);
-        setStatusIconCollor(this, true);
+        StatusUtils.setStatusIconCollor(this, true);
         initChat();
         initConfig();
     }
 
-    /**
-     * 设置状态栏图标的颜色，true=黑色，false=白色
-     *
-     * @param setDark
-     */
-    public static void setStatusIconCollor(Activity activity, boolean setDark) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            View decorView = activity.getWindow().getDecorView();
-            if (decorView != null) {
-                int vis = decorView.getSystemUiVisibility();
-                if (setDark) {
-                    vis |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-                } else {
-                    vis &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-                }
-                decorView.setSystemUiVisibility(vis);
-            }
-        }
-    }
+
 
     private void initChat() {
         chatLayout.initDefault();
