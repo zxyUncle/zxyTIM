@@ -19,15 +19,18 @@ public class MainActivity extends AppCompatActivity   {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        ZxyTimUtls.getInstance().login("2233039", "eJyrVgrxCdZLrSjILEpVsjIzMLEwMNABi5WlFilZKRnpGShB*MUp2YkFBZkpSlaGJgYGRpbGRuamEJnMlNS8ksy0TIgGI2NjA2NLmKbMdKBYaKZrYbhLhXlxpUm2eViRQZazRZGnV2VBckRksmNuVVmEeUqyX3KoYXmppy1UY0lmLtA9hqbmFmbGlpZGxrUAEGsxNw__");
+        ZxyTimUtls.getInstance().login("207026", "eJyrVgrxCdZLrSjILEpVsjIzMLEwMNABi5WlFilZKRnpGShB*MUp2YkFBZkpSlaGJgYGRpbGRuamEJnMlNS8ksy0TIgGA3MDIzOYnsx0oFBGsm9hUHZKaUl4UaC*o7*-b1JGpEd5upF-TomJT1JVgHahh4FTVYFJfmS6LVRjSWYu0DmGpuYW5oYmZgYGtQDpzjDT");
         findViewById(R.id.singnchat).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String mIconUrl = "https://goss.veer.com/creative/vcg/veer/800water/veer-134671947.jpg";
-                ARouter.getInstance().build(ARoutPath.CHAt)
-                        .withString("id", "201977")
-//                        .withString("img", mIconUrl)
-                        .withString("name", "带亚洲")
+//                ARouter.getInstance().build(ARoutPath.CHAt)
+//                        .withString("id", "201977")
+////                        .withString("img", mIconUrl)
+//                        .withString("name", "带亚洲")
+//                        .navigation();
+
+                ARouter.getInstance().build(ARoutPath.MSGLIST)
                         .navigation();
             }
         });

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">zxyIM</string>
+    <string name="messageListName">互动消息</string>
 </resources>
