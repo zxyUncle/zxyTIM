@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.singnchat).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String mIconUrl = "https://goss.veer.com/creative/vcg/veer/800water/veer-134671947.jpg";
+//                String mIconUrl = "https://goss.veer.com/creative/vcg/veer/800water/veer-134671947.jpg";
 //                ARouter.getInstance().build(ARoutPath.CHAt)
 //                        .withString("id", "201977")
 ////                        .withString("img", mIconUrl)

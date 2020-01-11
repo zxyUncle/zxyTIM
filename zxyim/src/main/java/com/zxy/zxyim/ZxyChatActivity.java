@@ -55,6 +55,7 @@ public class ZxyChatActivity extends AppCompatActivity {
         //zxy 标题区
         TitleBarLayout titleBar = chatLayout.getTitleBar();
         titleBar.setRightIcon(R.drawable.lucency);
+        titleBar.setLeftIcon(R.mipmap.back_black);
 
         //zxy 内容消息区
         MessageLayout messageLayout = chatLayout.getMessageLayout();

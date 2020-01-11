@@ -48,6 +48,7 @@ public class MessageListActivity extends AppCompatActivity {
         // 隐藏左侧 Group
         titleBarLayout.getLeftGroup().setVisibility(View.VISIBLE);
         titleBarLayout.getLeftIcon().setVisibility(View.VISIBLE);
+        titleBarLayout.getLeftIcon().setImageResource(R.mipmap.back_black);
         // 设置右侧的菜单图标
         titleBarLayout.setRightIcon(R.drawable.lucency);
 
