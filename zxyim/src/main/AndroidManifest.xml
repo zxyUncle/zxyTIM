@@ -1,52 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zxy.zxyim">
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
-    <uses-permission android:name="android.permission.CAMERA"/>
-
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-
-    <uses-permission android:name="android.permission.READ_LOGS"/>
-
-    <uses-permission android:name="android.permission.VIBRATE"/>
-
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
-
-    <!-- ********华为推送权限设置******** -->
-    <permission android:name="com.tencent.qcloud.tim.tuikit.permission.PROCESS_PUSH_MSG" android:protectionLevel="signatureOrSystem"/>
-
-    <uses-permission android:name="com.tencent.qcloud.tim.tuikit.permission.PROCESS_PUSH_MSG"/>
-
-    <!-- ********小米推送权限设置******** -->
-    <permission android:name="com.tencent.qcloud.tim.tuikit.permission.MIPUSH_RECEIVE" android:protectionLevel="signature"/>
-
-    <uses-permission android:name="com.tencent.qcloud.tim.tuikit.permission.MIPUSH_RECEIVE"/>
-
-    <!-- ********魅族推送权限设置******** -->
-    <!-- 兼容flyme5.0以下版本，魅族内部集成pushSDK必填，不然无法收到消息 -->
-    <uses-permission android:name="com.meizu.flyme.push.permission.RECEIVE"/>
-
-    <permission android:name="com.tencent.qcloud.tim.tuikit.push.permission.MESSAGE" android:protectionLevel="signature"/>
-
-    <uses-permission android:name="com.tencent.qcloud.tim.tuikit.push.permission.MESSAGE"/>
-
-    <!-- 兼容flyme3.0配置权限 -->
-    <uses-permission android:name="com.meizu.c2dm.permission.RECEIVE"/>
-
-    <permission android:name="com.tencent.qcloud.tim.tuikit.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
-
-    <uses-permission android:name="com.tencent.qcloud.tim.tuikit.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" /> <!-- 这个权限用于进行网络定位 测试码云 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 这个权限用于访问GPS  //定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- SD卡读取权限，用户写入离线定位数据a -->
+    <!-- <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/> -->
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" /> <!-- testasda替换系统锁屏要调用KeyguardManager类sasd相应方法去解除absc屏幕锁定,这里需要在配置文件中添加权限配置 -->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- 极光推送要求权限start -->
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- 安装未知来源应用的权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE " />
 
 
     <application>

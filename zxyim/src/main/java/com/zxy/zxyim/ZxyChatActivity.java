@@ -1,8 +1,11 @@
 package com.zxy.zxyim;
 
 
+import android.Manifest;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -14,6 +17,14 @@ import com.tencent.qcloud.tim.uikit.modules.chat.base.ChatInfo;
 import com.tencent.qcloud.tim.uikit.modules.chat.layout.input.InputLayout;
 import com.tencent.qcloud.tim.uikit.modules.chat.layout.message.MessageLayout;
 
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.OnNeverAskAgain;
+import permissions.dispatcher.OnPermissionDenied;
+import permissions.dispatcher.OnShowRationale;
+import permissions.dispatcher.PermissionRequest;
+import permissions.dispatcher.RuntimePermissions;
+
+@RuntimePermissions
 @Route(path = ARoutPath.CHAt)
 public class ZxyChatActivity extends AppCompatActivity {
     private ChatLayout chatLayout;
@@ -36,10 +47,10 @@ public class ZxyChatActivity extends AppCompatActivity {
         ARouter.getInstance().inject(this);
         chatLayout = findViewById(R.id.chat_layout);
         StatusUtils.setStatusIconCollor(this, true);
+        ZxyChatActivityPermissionsDispatcher.onNeedPermissionWithPermissionCheck(this);
         initChat();
         initConfig();
     }
-
 
 
     private void initChat() {
@@ -104,4 +115,43 @@ public class ZxyChatActivity extends AppCompatActivity {
 
     }
 
+    @NeedsPermission({Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA,
+            Manifest.permission.RECORD_AUDIO})
+    void onNeedPermission() {
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        ZxyChatActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+    }
+
+    /**
+     * 提示
+     * @param request
+     */
+    @OnShowRationale({Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA,
+            Manifest.permission.RECORD_AUDIO})
+    void onShowPermission(final PermissionRequest request) {
+    }
+
+    @OnPermissionDenied({Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA,
+            Manifest.permission.RECORD_AUDIO})
+    void onDeniedPermission() {
+        Toast.makeText(this, "onDeniedPermission", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnNeverAskAgain({Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA,
+            Manifest.permission.RECORD_AUDIO})
+    void onNeverAskPermission() {
+    }
 }
