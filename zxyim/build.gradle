@@ -44,5 +44,9 @@ dependencies {
     implementation 'com.alibaba:arouter-api:1.5.0'
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
 
+    //动态权限
+    implementation 'com.github.hotchemi:permissionsdispatcher:3.1.0'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:3.1.0'
+
     implementation project(path: ':tuikit')
 }
