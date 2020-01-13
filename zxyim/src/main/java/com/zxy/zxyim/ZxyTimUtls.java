@@ -40,23 +40,28 @@ public class ZxyTimUtls {
      * @param userSig    为用户登录凭证
      */
     public void login(String identifier, String userSig) {
-        // identifier 为用户名，userSig 为用户登录凭证
-        TIMManager.getInstance().login(identifier, userSig, new TIMCallBack() {
-            @Override
-            public void onError(int code, String desc) {
-                //错误码 code 和错误描述 desc，可用于定位请求失败原因
-                //错误码 code 列表请参见错误码表
-                Log.e(tag, "login failed. code: " + code + " errmsg: " + desc);
-                Log.e(tag, "失败");
-            }
+        String loginUser = TIMManager.getInstance().getLoginUser();
+        if (loginUser != null && loginUser.equals(identifier)) {
+            Log.e(tag, "已登录，不需要重复登录");
+        } else {
+            // identifier 为用户名，userSig 为用户登录凭证
+            TIMManager.getInstance().login(identifier, userSig, new TIMCallBack() {
+                @Override
+                public void onError(int code, String desc) {
+                    //错误码 code 和错误描述 desc，可用于定位请求失败原因
+                    //错误码 code 列表请参见错误码表
+                    Log.e(tag, "login failed. code: " + code + " errmsg: " + desc);
+                    Log.e(tag, "失败");
+                }
 
-            @Override
-            public void onSuccess() {
-                Log.d(tag, "login succ");
-                Log.e(tag, "登录成功");
-            }
+                @Override
+                public void onSuccess() {
+                    Log.d(tag, "login succ");
+                    Log.e(tag, "登录成功");
+                }
 
-        });
+            });
+        }
     }
 
     /**
