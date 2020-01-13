@@ -1,11 +1,14 @@
 package com.zxy.zxyim;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import com.tencent.imsdk.TIMCallBack;
 import com.tencent.imsdk.TIMConversation;
 import com.tencent.imsdk.TIMConversationType;
 import com.tencent.imsdk.TIMManager;
+import com.tencent.imsdk.TIMMessage;
+import com.tencent.imsdk.TIMMessageListener;
 
 import java.util.List;
 
@@ -23,6 +26,14 @@ public class ZxyTimUtls {
     private static class SingleInnerHolder {
         private static ZxyTimUtls instance = new ZxyTimUtls();
     }
+
+    /**
+     * 新消息回调
+     */
+    public interface addMessageListener {
+        public boolean onNewMessages(List<TIMMessage> msgs);
+    }
+
 
     /**
      * @param identifier 为用户名
@@ -84,4 +95,15 @@ public class ZxyTimUtls {
         return sum;
     }
 
+    public void setOnMessageListener(final addMessageListener addMessageListener) {
+        //设置消息监听器，收到新消息时，通过此监听器回调
+        TIMManager.getInstance().addMessageListener(new TIMMessageListener() {//消息监听器
+            @Override
+            public boolean onNewMessages(List<TIMMessage> msgs) {//收到新消息
+                addMessageListener.onNewMessages(msgs);
+                //消息的内容解析请参考消息收发文档中的消息解析说明
+                return false; //返回true将终止回调链，不再调用下一个新消息监听器
+            }
+        });
+    }
 }

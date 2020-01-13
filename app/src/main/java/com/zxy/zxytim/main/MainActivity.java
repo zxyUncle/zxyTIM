@@ -5,13 +5,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.tencent.imsdk.TIMConversation;
 import com.tencent.imsdk.TIMConversationType;
 import com.tencent.imsdk.TIMManager;
+import com.tencent.imsdk.TIMMessage;
+import com.tencent.imsdk.TIMMessageListener;
 import com.zxy.zxyim.ARoutPath;
+import com.zxy.zxyim.MessageListActivity;
 import com.zxy.zxyim.ZxyTimUtls;
 import com.zxy.zxytim.R;
 
@@ -43,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
                         .navigation();
             }
         });
+       ZxyTimUtls.getInstance().setOnMessageListener(new ZxyTimUtls.addMessageListener() {
+           @Override
+           public boolean onNewMessages(List<TIMMessage> msgs) {
+               Toast.makeText(MainActivity.this, "新消息来了", Toast.LENGTH_SHORT).show();
+               return false;
+           }
+       });
     }
 
 
