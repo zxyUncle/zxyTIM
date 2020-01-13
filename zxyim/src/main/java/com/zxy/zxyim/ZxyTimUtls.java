@@ -7,6 +7,8 @@ import com.tencent.imsdk.TIMConversation;
 import com.tencent.imsdk.TIMConversationType;
 import com.tencent.imsdk.TIMManager;
 
+import java.util.List;
+
 public class ZxyTimUtls {
     private String tag = "zxyIM";
 
@@ -68,26 +70,18 @@ public class ZxyTimUtls {
 
 
     /**
-     * 获取会话扩展实例
-     *
-     * @param conversationId
+     * 获取所有会话未读数
      */
-    private TIMConversation getTIMConversation(String conversationId) {
-        //获取会话扩展实例
-        TIMConversation con = TIMManager.getInstance().getConversation(TIMConversationType.C2C, "207026");
-        return con;
-    }
-
-    /**
-     * 获取会话未读数
-     *
-     * @param conversationId
-     */
-    public long getUnreadMessageNum(String conversationId) {
-        //获取会话未读数
-        long num = getTIMConversation(conversationId).getUnreadMessageNum();
-        Log.e("zxyIM", "unread msg num: " + num);
-        return num;
+    public long getUnreadMessageNum() {
+        long sum = 0;
+        //获取会话列表
+        List<TIMConversation> conversationLists = TIMManager.getInstance().getConversationList();
+        for (TIMConversation conversationList : conversationLists
+        ) {
+            long unreadMessageNum = conversationList.getUnreadMessageNum();
+            sum += unreadMessageNum;
+        }
+        return sum;
     }
 
 }

@@ -15,6 +15,8 @@ import com.zxy.zxyim.ARoutPath;
 import com.zxy.zxyim.ZxyTimUtls;
 import com.zxy.zxytim.R;
 
+import java.util.List;
+
 
 @Route(path = ARoutPath.MAIN)
 public class MainActivity extends AppCompatActivity {
@@ -25,13 +27,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
 
-        ZxyTimUtls.getInstance().login("207026", "eJyrVgrxCdZLrSjILEpVsjIzMLEwMNABi5WlFilZKRnpGShB*MUp2YkFBZkpSlaGJgYGRpbGRuamEJnMlNS8ksy0TIgGA3MDIzOYnsx0oFBGsm9hUHZKaUl4UaC*o7*-b1JGpEd5upF-TomJT1JVgHahh4FTVYFJfmS6LVRjSWYu0DmGpuYW5oYmZgYGtQDpzjDT");
-
-
-
+        ZxyTimUtls.getInstance().login("207026", "eJyrVgrxCdZLrSjILEpVsjIzMLEwMNABi5WlFilZKRnpGShB*MUp2YkFBZkpSlaGJgYGRpbGRuamEJnMlNS8ksy0TIgGA3MDIzOYnsx0oFB6WUBeQFFKfmBksHmAU7FveVBGZnBUuleutmmJS3qeZbqnk6*jtmWESX6yLVRjSWYu0DmGpuYWFuZm5qbmtQDb8jBr");
         findViewById(R.id.singnchat).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 //                String mIconUrl = "https://goss.veer.com/creative/vcg/veer/800water/veer-134671947.jpg";
 //                ARouter.getInstance().build(ARoutPath.CHAt)
 //                        .withString("id", "201977")
