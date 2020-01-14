@@ -100,6 +100,10 @@ public class ZxyTimUtls {
         return sum;
     }
 
+    /**
+     * 设置消息监听器，收到新消息时，通过此监听器回调
+     * @param addMessageListener
+     */
     public void setOnMessageListener(final addMessageListener addMessageListener) {
         //设置消息监听器，收到新消息时，通过此监听器回调
         TIMManager.getInstance().addMessageListener(new TIMMessageListener() {//消息监听器
@@ -111,4 +115,6 @@ public class ZxyTimUtls {
             }
         });
     }
+
+
 }

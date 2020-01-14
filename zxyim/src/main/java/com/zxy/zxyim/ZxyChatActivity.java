@@ -5,17 +5,27 @@ import android.Manifest;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.tencent.imsdk.TIMCallBack;
 import com.tencent.imsdk.TIMConversationType;
+import com.tencent.imsdk.TIMFriendshipManager;
+import com.tencent.imsdk.TIMUserProfile;
+import com.tencent.imsdk.TIMValueCallBack;
 import com.tencent.qcloud.tim.uikit.component.TitleBarLayout;
 import com.tencent.qcloud.tim.uikit.modules.chat.ChatLayout;
 import com.tencent.qcloud.tim.uikit.modules.chat.base.ChatInfo;
 import com.tencent.qcloud.tim.uikit.modules.chat.layout.input.InputLayout;
 import com.tencent.qcloud.tim.uikit.modules.chat.layout.message.MessageLayout;
+import com.tencent.qcloud.tim.uikit.utils.ToastUtil;
+
+import java.util.HashMap;
 
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.OnNeverAskAgain;
@@ -35,10 +45,6 @@ public class ZxyChatActivity extends AppCompatActivity {
     //名字
     @Autowired(name = "name")
     String name = "";
-
-//    //头像
-//    @Autowired(name = "img")
-//    String mIconUrl = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +79,8 @@ public class ZxyChatActivity extends AppCompatActivity {
         //设置聊天背景
 //        messageLayout.setBackground(new ColorDrawable(0xB0AA6D96));
         // 设置默认头像，默认与朋友与自己的头像相同
-        messageLayout.setAvatar(R.drawable.ic_login_logo);
+//        messageLayout.setAvatar(R.drawable.ic_login_logo);
+        int avatar = messageLayout.getAvatar();
         // 设置头像圆角，不设置则默认不做圆角处理
 //        messageLayout.setAvatarRadius(50);
         // 设置头像大小
@@ -81,25 +88,18 @@ public class ZxyChatActivity extends AppCompatActivity {
 
 //        messageLayout.setRightNameVisibility(View.VISIBLE);
 //        messageLayout.setLeftNameVisibility(View.VISIBLE);
-
-//        //设置头像
-//        HashMap<String, Object> hashMap = new HashMap<>();
-//        // 头像，mIconUrl 就是您上传头像后的 URL，可以参考 Demo 中的随机头像作为示例
-//        if (!TextUtils.isEmpty(mIconUrl)) {
-//            hashMap.put(TIMUserProfile.TIM_PROFILE_TYPE_KEY_FACEURL, mIconUrl);
-//        }
-//        TIMFriendshipManager.getInstance().modifySelfProfile(hashMap, new TIMCallBack() {
-//            @Override
-//            public void onError(int i, String s) {
-//                Log.e("zxyIM", "modifySelfProfile err code = " + i + ", desc = " + s);
-//                ToastUtil.toastShortMessage("Error code = " + i + ", desc = " + s);
-//            }
 //
-//            @Override
-//            public void onSuccess() {
-//                Log.e("zxyIM", "modifySelfProfile success");
-//            }
-//        });
+        // 头像，mIconUrl 就是您上传头像后的 URL，可以参考 Demo 中的随机头像作为示例
+        TIMFriendshipManager.getInstance().getSelfProfile(new TIMValueCallBack<TIMUserProfile>() {
+            @Override
+            public void onError(int i, String s) {
+            }
+
+            @Override
+            public void onSuccess(TIMUserProfile timUserProfile) {
+                SelfProfile(timUserProfile.getFaceUrl());
+            }
+        });
 
         // zxy 输入区域
         // 从 ChatLayout 里获取 InputLayout
@@ -113,6 +113,27 @@ public class ZxyChatActivity extends AppCompatActivity {
         // 隐藏摄像并发送
         inputLayout.disableVideoRecordAction(false);
 
+    }
+
+    /**
+     * 设置头像
+     *
+     * @param mIconUrl
+     */
+    public void SelfProfile(String mIconUrl) {
+        HashMap<String, Object> hashMap = new HashMap<>();
+        if (!TextUtils.isEmpty(mIconUrl)) {
+            hashMap.put(TIMUserProfile.TIM_PROFILE_TYPE_KEY_FACEURL, mIconUrl);
+        }
+        TIMFriendshipManager.getInstance().modifySelfProfile(hashMap, new TIMCallBack() {
+            @Override
+            public void onError(int i, String s) {
+            }
+
+            @Override
+            public void onSuccess() {
+            }
+        });
     }
 
     @NeedsPermission({Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -131,6 +152,7 @@ public class ZxyChatActivity extends AppCompatActivity {
 
     /**
      * 提示
+     *
      * @param request
      */
     @OnShowRationale({Manifest.permission.READ_EXTERNAL_STORAGE,

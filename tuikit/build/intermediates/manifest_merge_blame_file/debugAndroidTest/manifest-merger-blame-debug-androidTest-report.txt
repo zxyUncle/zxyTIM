@@ -1,0 +1,129 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.tencent.qcloud.tim.uikit.test" >
+4
+5    <uses-sdk
+5-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3141381948962551707.xml:5:5-74
+6        android:minSdkVersion="21"
+6-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3141381948962551707.xml:5:15-41
+7        android:targetSdkVersion="27" />
+7-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3141381948962551707.xml:5:42-71
+8
+9    <instrumentation
+9-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3141381948962551707.xml:11:5-15:83
+10        android:name="android.support.test.runner.AndroidJUnitRunner"
+10-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3141381948962551707.xml:11:22-83
+11        android:functionalTest="false"
+11-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3141381948962551707.xml:14:22-52
+12        android:handleProfiling="false"
+12-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3141381948962551707.xml:13:22-53
+13        android:label="Tests for com.tencent.qcloud.tim.uikit.test"
+13-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3141381948962551707.xml:15:22-81
+14        android:targetPackage="com.tencent.qcloud.tim.uikit.test" />
+14-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3141381948962551707.xml:12:22-79
+15
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-79
+16-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:9:22-76
+17    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+17-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:10:5-76
+17-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:10:22-73
+18    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+18-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-75
+18-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:22-72
+19    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+19-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-81
+19-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:22-78
+20    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+20-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-80
+20-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:22-77
+21    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+21-->[com.tencent.imsdk:imsdk:4.6.1] D:\studioCache\AndroidStudio\.gradle\caches\transforms-2\files-2.1\e2a8683050a9ffc29ee53ca2ed7af7bf\imsdk-4.6.1\AndroidManifest.xml:11:5-81
+21-->[com.tencent.imsdk:imsdk:4.6.1] D:\studioCache\AndroidStudio\.gradle\caches\transforms-2\files-2.1\e2a8683050a9ffc29ee53ca2ed7af7bf\imsdk-4.6.1\AndroidManifest.xml:11:22-78
+22    <uses-permission android:name="android.permission.INTERNET" />
+22-->[com.tencent.imsdk:imsdk:4.6.1] D:\studioCache\AndroidStudio\.gradle\caches\transforms-2\files-2.1\e2a8683050a9ffc29ee53ca2ed7af7bf\imsdk-4.6.1\AndroidManifest.xml:12:5-67
+22-->[com.tencent.imsdk:imsdk:4.6.1] D:\studioCache\AndroidStudio\.gradle\caches\transforms-2\files-2.1\e2a8683050a9ffc29ee53ca2ed7af7bf\imsdk-4.6.1\AndroidManifest.xml:12:22-64
+23
+24    <application
+24-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3141381948962551707.xml:7:5-9:19
+25        android:allowBackup="true"
+25-->[com.tencent.imsdk:imsdk:4.6.1] D:\studioCache\AndroidStudio\.gradle\caches\transforms-2\files-2.1\e2a8683050a9ffc29ee53ca2ed7af7bf\imsdk-4.6.1\AndroidManifest.xml:17:9-35
+26        android:debuggable="true"
+26-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3141381948962551707.xml:7:18-43
+27        android:label="@string/app_name"
+27-->[com.tencent.imsdk:imsdk:4.6.1] D:\studioCache\AndroidStudio\.gradle\caches\transforms-2\files-2.1\e2a8683050a9ffc29ee53ca2ed7af7bf\imsdk-4.6.1\AndroidManifest.xml:18:9-41
+28        android:supportsRtl="true"
+28-->[com.tencent.imsdk:imsdk:4.6.1] D:\studioCache\AndroidStudio\.gradle\caches\transforms-2\files-2.1\e2a8683050a9ffc29ee53ca2ed7af7bf\imsdk-4.6.1\AndroidManifest.xml:19:9-35
+29        android:usesCleartextTraffic="true" >
+29-->[com.tencent.imsdk:imsdk:4.6.1] D:\studioCache\AndroidStudio\.gradle\caches\transforms-2\files-2.1\e2a8683050a9ffc29ee53ca2ed7af7bf\imsdk-4.6.1\AndroidManifest.xml:20:9-44
+30        <uses-library android:name="android.test.runner" />
+30-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3141381948962551707.xml:8:9-60
+30-->D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\tmp\manifest\androidTest\debug\manifestMerger3141381948962551707.xml:8:23-57
+31
+32        <activity
+32-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:9-18:52
+33            android:name="com.tencent.qcloud.tim.uikit.component.video.CameraActivity"
+33-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:13-87
+34            android:screenOrientation="portrait" />
+34-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:13-49
+35        <activity
+35-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:9-21:77
+36            android:name="com.tencent.qcloud.tim.uikit.component.video.VideoViewActivity"
+36-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:13-90
+37            android:configChanges="keyboardHidden|orientation|screenSize" />
+37-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:13-74
+38        <activity
+38-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:22:9-24:52
+39            android:name="com.tencent.qcloud.tim.uikit.component.photoview.PhotoViewActivity"
+39-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:13-94
+40            android:screenOrientation="portrait" />
+40-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:13-49
+41        <activity
+41-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:9-27:52
+42            android:name="com.tencent.qcloud.tim.uikit.modules.group.info.GroupInfoActivity"
+42-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:26:13-93
+43            android:screenOrientation="portrait" />
+43-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:13-49
+44        <activity
+44-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:9-30:52
+45            android:name="com.tencent.qcloud.tim.uikit.component.SelectionActivity"
+45-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:13-84
+46            android:screenOrientation="portrait" />
+46-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:30:13-49
+47        <activity
+47-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:31:9-34:73
+48            android:name="com.tencent.qcloud.tim.uikit.modules.group.apply.GroupApplyManagerActivity"
+48-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:32:13-102
+49            android:screenOrientation="portrait"
+49-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:33:13-49
+50            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+50-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:34:13-70
+51        <activity
+51-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:35:9-38:73
+52            android:name="com.tencent.qcloud.tim.uikit.modules.group.apply.GroupApplyMemberActivity"
+52-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:36:13-101
+53            android:screenOrientation="portrait"
+53-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:37:13-49
+54            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+54-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:38:13-70
+55
+56        <provider
+56-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:40:9-48:20
+57            android:name="com.tencent.qcloud.tim.uikit.utils.TUIKitFileProvider"
+57-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:41:13-81
+58            android:authorities="com.tencent.qcloud.tim.uikit.test.uikit.fileprovider"
+58-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:42:13-70
+59            android:exported="false"
+59-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:43:13-37
+60            android:grantUriPermissions="true" >
+60-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:44:13-47
+61            <meta-data
+61-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:45:13-47:61
+62                android:name="android.support.FILE_PROVIDER_PATHS"
+62-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:46:17-67
+63                android:resource="@xml/file_paths_public" />
+63-->[__tested_artifact__::tuikit] D:\Android\workspace_module\zxyTIM\tuikit\build\intermediates\library_manifest\debug\AndroidManifest.xml:47:17-58
+64        </provider>
+65    </application>
+66
+67</manifest>
