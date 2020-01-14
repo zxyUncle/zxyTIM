@@ -1,17 +1,27 @@
 package com.zxy.zxyim;
 
+import android.app.Application;
+import android.content.Context;
+import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.tencent.imsdk.TIMCallBack;
 import com.tencent.imsdk.TIMConversation;
 import com.tencent.imsdk.TIMConversationType;
 import com.tencent.imsdk.TIMFriendshipManager;
+import com.tencent.imsdk.TIMLogLevel;
 import com.tencent.imsdk.TIMManager;
 import com.tencent.imsdk.TIMMessage;
 import com.tencent.imsdk.TIMMessageListener;
+import com.tencent.imsdk.TIMSdkConfig;
 import com.tencent.imsdk.TIMUserProfile;
 import com.tencent.imsdk.TIMValueCallBack;
+import com.tencent.qcloud.tim.uikit.TUIKit;
+import com.tencent.qcloud.tim.uikit.config.CustomFaceConfig;
+import com.tencent.qcloud.tim.uikit.config.GeneralConfig;
+import com.tencent.qcloud.tim.uikit.config.TUIKitConfigs;
 
 import java.util.List;
 
@@ -37,6 +47,37 @@ public class ZxyTimUtls {
         public boolean onNewMessages(List<TIMMessage> msgs);
     }
 
+    /**
+     * 初始化TIM
+     * @param application
+     * @param SDKAPPID
+     */
+    public void initTIM(Application application, int SDKAPPID) {
+        //ARouter
+        ARouter.openLog();
+        ARouter.openDebug();
+        ARouter.init(application);
+
+        // 配置 Config，请按需配置
+        TUIKitConfigs configs = TUIKit.getConfigs();
+        configs.setSdkConfig(new TIMSdkConfig(SDKAPPID));
+        configs.setCustomFaceConfig(new CustomFaceConfig());
+        configs.setGeneralConfig(new GeneralConfig());
+
+        /**
+         * TUIKit 的初始化函数
+         *
+         * @param context  应用的上下文，一般为对应应用的 ApplicationContext
+         * @param sdkAppID 您在腾讯云注册应用时分配的 SDKAppID
+         * @param configs  TUIKit 的相关配置项，一般使用默认即可，需特殊配置参考 API 文档
+         */
+        TIMSdkConfig config = new TIMSdkConfig(SDKAPPID)
+                .enableLogPrint(true)
+                .setLogLevel(TIMLogLevel.DEBUG)
+                .setLogPath(Environment.getExternalStorageDirectory().getPath() + "/justfortest/");
+        TIMManager.getInstance().init(application, config);
+        TUIKit.init(application, SDKAPPID, configs);
+    }
 
     /**
      * @param identifier 为用户名
@@ -105,6 +146,7 @@ public class ZxyTimUtls {
 
     /**
      * 设置消息监听器，收到新消息时，通过此监听器回调
+     *
      * @param addMessageListener
      */
     public void setOnMessageListener(final addMessageListener addMessageListener) {
@@ -121,9 +163,10 @@ public class ZxyTimUtls {
 
     /**
      * 更新本地用户数据
+     *
      * @param listid
      */
-    public void updataLocationData(List<String> listid){
+    public void updataLocationData(List<String> listid) {
         TIMFriendshipManager.getInstance().getUsersProfile(listid, true, new TIMValueCallBack<List<TIMUserProfile>>() {
             @Override
             public void onError(int i, String s) {
