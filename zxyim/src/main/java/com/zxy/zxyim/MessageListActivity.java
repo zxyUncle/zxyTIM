@@ -5,15 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.tencent.imsdk.TIMConversationType;
+import com.tencent.imsdk.TIMConversation;
 import com.tencent.imsdk.TIMFriendshipManager;
 import com.tencent.imsdk.TIMManager;
-import com.tencent.imsdk.TIMMessage;
-import com.tencent.imsdk.TIMMessageListener;
 import com.tencent.imsdk.TIMUserProfile;
 import com.tencent.imsdk.TIMValueCallBack;
 import com.tencent.qcloud.tim.uikit.component.TitleBarLayout;
@@ -21,6 +18,7 @@ import com.tencent.qcloud.tim.uikit.modules.conversation.ConversationLayout;
 import com.tencent.qcloud.tim.uikit.modules.conversation.ConversationListLayout;
 import com.tencent.qcloud.tim.uikit.modules.conversation.base.ConversationInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,6 +31,7 @@ import java.util.List;
 public class MessageListActivity extends AppCompatActivity {
     private ConversationLayout mConversationLayout;
     private ConversationListLayout conversationListLayout;
+    private List<String> listid = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +40,6 @@ public class MessageListActivity extends AppCompatActivity {
         StatusUtils.setStatusIconCollor(this, true);
         initView();
         initConfig();
-
-
-
     }
 
     private void initView() {
@@ -51,6 +47,18 @@ public class MessageListActivity extends AppCompatActivity {
         mConversationLayout = findViewById(R.id.conversation_layout);
         // 初始化聊天面板
         mConversationLayout.initDefault();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //zxy 获取会话消息列表
+        List<TIMConversation> conversationLists = TIMManager.getInstance().getConversationList();
+        //zxy 更新本地数据
+        for (int i = 0; i < conversationLists.size(); i++) {
+            listid.add(conversationLists.get(i).getPeer());
+        }
+        ZxyTimUtls.getInstance().updataLocationData(listid);
     }
 
     private void initConfig() {
@@ -74,6 +82,8 @@ public class MessageListActivity extends AppCompatActivity {
 
         //zxy 进入聊天
         conversationListLayout = mConversationLayout.findViewById(R.id.conversation_list);
+
+
         conversationListLayout.setOnItemClickListener(new ConversationListLayout.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position, ConversationInfo messageInfo) {

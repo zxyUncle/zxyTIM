@@ -6,9 +6,12 @@ import android.widget.Toast;
 import com.tencent.imsdk.TIMCallBack;
 import com.tencent.imsdk.TIMConversation;
 import com.tencent.imsdk.TIMConversationType;
+import com.tencent.imsdk.TIMFriendshipManager;
 import com.tencent.imsdk.TIMManager;
 import com.tencent.imsdk.TIMMessage;
 import com.tencent.imsdk.TIMMessageListener;
+import com.tencent.imsdk.TIMUserProfile;
+import com.tencent.imsdk.TIMValueCallBack;
 
 import java.util.List;
 
@@ -112,6 +115,24 @@ public class ZxyTimUtls {
                 addMessageListener.onNewMessages(msgs);
                 //消息的内容解析请参考消息收发文档中的消息解析说明
                 return false; //返回true将终止回调链，不再调用下一个新消息监听器
+            }
+        });
+    }
+
+    /**
+     * 更新本地用户数据
+     * @param listid
+     */
+    public void updataLocationData(List<String> listid){
+        TIMFriendshipManager.getInstance().getUsersProfile(listid, true, new TIMValueCallBack<List<TIMUserProfile>>() {
+            @Override
+            public void onError(int i, String s) {
+
+            }
+
+            @Override
+            public void onSuccess(List<TIMUserProfile> timUserProfiles) {
+
             }
         });
     }

@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
 
-        ZxyTimUtls.getInstance().login("207026", "eJyrVgrxCdZLrSjILEpVsjIzMLEwMNABi5WlFilZKRnpGShB*MUp2YkFBZkpSlaGJgYGRpbGRuamEJnMlNS8ksy0TIgGA3MDIzOYnsx0oJCfj5NToWFAbqalpXtyYVFSeIGlp3lJblBUoX9ZYlWmS6BpQElKuLGfs3O*LVRjSWYu0DmGpuYWlhaGBhYWtQDLVzBv");
+        ZxyTimUtls.getInstance().login("207026", "eJyrVgrxCdZLrSjILEpVsjIzMLEwMNABi5WlFilZKRnpGShB*MUp2YkFBZkpSlaGJgYGRpbGRuamEJnMlNS8ksy0TIgGA3MDIzOYnsx0oJBbsm9AjpeBW0hhsrGlRUm2dmpBSlRiellwWZRZYJF2aKRPlXOiZ3F*pFexLVRjSWYu0DmGpuYWlpaGRsZGtQDNajCT");
 //        ZxyTimUtls.getInstance().login("2233039", "eJyrVgrxCdZLrSjILEpVsjIzMLEwMNABi5WlFilZKRnpGShB*MUp2YkFBZkpSlaGJgYGRpbGRuamEJnMlNS8ksy0TIgGA3MDIzOYnsx0oFB6WUBeQFFKfmBksHmAU7FveVBGZnBUuleutmmJS3qeZbqnk6*jtmWESX6yLVRjSWYu0DmGpuYWFuZm5qbmtQDb8jBr");
         findViewById(R.id.singnchat).setOnClickListener(new View.OnClickListener() {
             @Override
